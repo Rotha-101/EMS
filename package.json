@@ -1,0 +1,48 @@
+
+{
+  "name": "swg-dispatch-ems",
+  "version": "3.0.4",
+  "description": "Industrial EMS Dashboard",
+  "main": "main.js",
+  "author": "Operator Engineering",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "dist": "npm run build && electron-builder",
+    "electron": "electron ."
+  },
+  "dependencies": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "zustand": "^5.0.11",
+    "xlsx": "0.18.5",
+    "jspdf": "2.5.1",
+    "jspdf-autotable": "3.8.2",
+    "better-sqlite3": "^11.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "vite": "^6.0.0",
+    "typescript": "^5.7.0",
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.industrial.ems.dispatch",
+    "productName": "SWG Dispatch Console",
+    "win": {
+      "target": "portable",
+      "artifactName": "EMS_Dispatch_v${version}.exe"
+    },
+    "files": [
+      "dist/**/*",
+      "main.js",
+      "preload.js"
+    ],
+    "directories": {
+      "output": "release"
+    }
+  }
+}
